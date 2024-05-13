@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:productapp/entities/product.dart';
 import 'package:productapp/widgets/simpleProduct/simpleProductInfo.dart';
 import 'package:productapp/widgets/simpleProduct/simpleProductPhoto.dart';
 import 'package:productapp/widgets/simpleProduct/simpleProductPhotos.dart';
 
 class SimpleProduct extends StatelessWidget {
-  const SimpleProduct({super.key});
+  final Product product;
+  SimpleProduct(this.product);
 
   @override
   Widget build(BuildContext context) {
@@ -16,11 +18,11 @@ class SimpleProduct extends StatelessWidget {
                 children:<Widget> [
                         Column(
                             children:<Widget> [
-                                  SimpleProductPhoto(),
-                                  SimpleProductPhotos(),
+                                  SimpleProductPhoto(this.product),
+                                  SimpleProductPhotos(this.product),
                             ],
                         ),
-                        SimpleProductInfo()
+                        SimpleProductInfo(this.product)
 
                 ],
           ),     

@@ -1,22 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:productapp/entities/product.dart';
 
 class SimpleProductPhotos extends StatelessWidget {
- 
+  final Product product;
+  SimpleProductPhotos(this.product);
 
   @override
   Widget build(BuildContext context) {
     return Row(
         children:<Widget> [
             Image.network(
-                  "https://m.media-amazon.com/images/I/71TKUu1N87L._AC_SL1285_.jpg",
+                  this.product.photo1,
                   width: 96,
             ),
             Image.network(
-                  "https://m.media-amazon.com/images/I/71t-+-7PlbS._AC_SL1417_.jpg",
+                 this.product.photo2,
                   width: 96,
             ),
             Image.network(
-                  "https://m.media-amazon.com/images/I/61qhO0LvTkL._AC_.jpg",
+                 this.product.photo3,
                   width: 96,
             ),
 
